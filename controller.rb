@@ -69,7 +69,7 @@ class Controller
         @filename = "mayor/#{@anchor}"
         @meta_partial = set_meta({
             'url' => "#{base}/sharing/#{@filename}",
-            'image' => "#{base}#{mayor['photo']}",
+            'image' => "#{base}#{mayor['photo'].gsub(' ','%20')}",
             'title' => "Vote for #{mayor['name']} for Mayor of Denver",
             'description' => ("I'm supporting #{mayor['name']} for Mayor of "+
                               "Denver"),
@@ -89,7 +89,7 @@ class Controller
 
         @meta_partial = set_meta({
             'url' => "#{base}/sharing/#{@filename}",
-            'image' => "#{base}/#{counselor['photo']}",
+            'image' => "#{base}/#{counselor['photo'].gsub(' ','%20')}",
             'title' => "Vote #{name} for #{office}",
             'description' => "Vote #{name} for #{office} - and you should too",
         })
@@ -106,7 +106,7 @@ class Controller
 
         @meta_partial = set_meta({
             'url' => "#{base}/sharing/#{@filename}",
-            'image' => "#{base}/#{candidate['photo']}",
+            'image' => "#{base}/#{candidate['photo'].gsub(' ','%20')}",
             'title' => "Vote #{name} for #{office}",
             'description' => "Vote #{name} for #{office} - and you should too",
         })
