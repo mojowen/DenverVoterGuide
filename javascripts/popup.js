@@ -64,6 +64,8 @@
         try { ga('send', 'event', 'popup',
                  success ? 'close_success' : 'close_fail', key);
         } catch(e) { }
+        document.cookie = key+"=set"
+
         return false;
     }
 
@@ -81,5 +83,5 @@
     inner.appendChild(closer)
     container.appendChild(mask)
     container.appendChild(inner)
-    d.body.appendChild(container)
+    if( document.cookie.search(key) === -1 ) d.body.appendChild(container);
 })()
