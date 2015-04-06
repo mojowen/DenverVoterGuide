@@ -11,8 +11,8 @@
             <h1>Text Me My Polling Place</h1>
             <p>Sing up for an automatic reminder of your closet polling place</p>
             <form method="POST" id="the_form">
-              <input type="text" id="the_phone_input" placeholder="Your Name">
-              <input type="text" id="the_name_input" placeholder="Your Cell #">
+              <input type="text" id="the_zip_input" placeholder="Your Zip Code">
+              <input type="text" id="the_phone_input" placeholder="Your Cell #">
               <input type="hidden" name="submit" value="Submit">
               <br/ >
               <input type="submit" value="Sign Up">
@@ -22,7 +22,7 @@
     </div>
 <script >
     (function() {
-        var config = {'action': null,'post_back': null,'phone_name': null,'name_name': null},
+        var config = {'action': null,'post_back': null,'phone_name': null,'zip_name': null},
             params = document.location.search.replace('?','').split('&')
         for (var i = params.length - 1; i >= 0; i--) {
             key_val = params[i].split('=')
@@ -32,7 +32,7 @@
         the_form.setAttribute('action',
             'https://docs.google.com/forms/d/'+config['action']+'/formResponse')
         the_phone_input.setAttribute('name', config['phone_name'])
-        the_name_input.setAttribute('name', config['name_name'])
+        the_zip_input.setAttribute('name', config['zip_name'])
         the_form.onsubmit = function() {
             window.parent.postMessage('done', config['post_back'])
             try { ga('send', 'event', 'popup', 'submit', config['action']); } catch(e) { }

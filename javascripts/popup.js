@@ -4,8 +4,8 @@
         config_elem = d.getElementById('popup_config'),
         frame_url = config_elem.getAttribute('data-url'),
         key = config_elem.getAttribute('data-key'),
-        phone_field = config_elem.getAttribute('data-phone_name'),
-        name_field = config_elem.getAttribute('data-name_name'),
+        phone_name = config_elem.getAttribute('data-phone_name'),
+        zip_name = config_elem.getAttribute('data-zip_name'),
         // Elements
         container = d.createElement('div'),
         mask = d.createElement('div'),
@@ -15,8 +15,8 @@
         post_back = document.location.toString(),
         params = ['action='+key,
                   'post_back='+post_back,
-                  'phone_name='+phone_field,
-                  'name_name='+name_field].join('&')
+                  'phone_name='+phone_name,
+                  'zip_name='+zip_name].join('&')
 
     // style
     mask.style.position = 'fixed'
