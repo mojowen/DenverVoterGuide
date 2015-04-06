@@ -58,14 +58,21 @@
     frame.src = frame_url + '?' + params
 
     // bindings
-    function close_popup() { d.body.removeChild(container); return false; }
+    function close_popup(success) {
+        success = success || false
+        d.body.removeChild(container);
+        try { ga('send', 'event', 'popup',
+                 success ? 'close_success' : 'close_fail', key);
+        } catch(e) { }
+        return false;
+    }
 
     mask.onclick = close_popup
     closer.onclick = close_popup
 
     try {
         window.addEventListener("message", function(e) {
-            setTimeout( function() { close_popup(); }, 500)
+            setTimeout( function() { close_popup(true); }, 500)
         })
     } catch(e) {}
 

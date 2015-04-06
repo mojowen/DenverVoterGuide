@@ -35,8 +35,19 @@
         the_name_input.setAttribute('name', config['name_name'])
         the_form.onsubmit = function() {
             window.parent.postMessage('done', config['post_back'])
+            try { ga('send', 'event', 'popup', 'submit', config['action']); } catch(e) { }
         }
+        try { ga('send', 'event', 'popup', 'load', config['action']); } catch(e) { }
     })()
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59932015-2', 'auto');
+    ga('send', 'pageview');
 </script>
 </body>
 </html>
