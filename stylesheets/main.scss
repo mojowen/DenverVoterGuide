@@ -119,11 +119,13 @@ body {
     padding: 30px 0;
     @include clear();
     .scroll {
+        margin: 20px 0 50px;
         @include gridle_state(tablet) {  overflow-y: scroll; }
         table {
             th .img {
                 @include frame(40px);
-                margin-left: 10px;
+                margin: 0 auto;
+                display: block;
             }
             tr:nth-child(even) td { background: lighten($background, 30%); }
             td:first-child {
@@ -153,7 +155,7 @@ body {
     @include gridle(10, tablet);
     @include gridle(6);
     @include gridle_centered(tablet);
-    min-height: 320px;
+    min-height: 440px;
     margin-bottom: 50px;
 
     .social {
@@ -172,18 +174,12 @@ body {
             margin: 4px auto;
         }
     }
-    .bio, .endorsements {
+    .bio {
         padding-left: 0; padding-right: 0;
     }
     .bio {
         @include gridle(12, mobile);
-        @include gridle(5);
-    }
-    .endorsements {
-        @include gridle_centered(mobile);
-        @include gridle(12, mobile);
-        @include gridle(7);
-        padding-top: 10px;
+        @include gridle(6);
     }
     .img {
         @include frame(100px);
@@ -264,29 +260,27 @@ body {
     @include clear();
     margin-bottom: 30px;
 }
-#alderperson_list {
-    .alderperson {
-        @include gridle(6);
-        @include gridle(10, mobile);
-        text-align: center;
-        div.img {
-            @include frame(60px);
-            min-height: 60px;
-            margin: 0 auto;
-            display: block;
-        }
-        min-height: 160px;
-        margin-bottom: 40px;
-
-        a {
-            font-size: 12px;
-            padding: 0 4px;
-            &:before { margin-right: 2px; }
-        }
+.counselor {
+    @include gridle(4);
+    @include gridle(6, tablet);
+    @include gridle(10, mobile);
+    text-align: center;
+    div.img {
+        @include frame(60px);
+        min-height: 60px;
+        margin: 0 auto;
+        display: block;
     }
-    h3 { text-align: center; }
-    @include clear();
+    min-height: 160px;
+    margin-bottom: 40px;
+
+    a {
+        font-size: 12px;
+        padding: 0 4px;
+        &:before { margin-right: 2px; }
+    }
 }
+#other .candidate { min-height: 120px; }
 .map_container {
     margin: 50px 0 0;
 

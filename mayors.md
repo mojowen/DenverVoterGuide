@@ -1,7 +1,6 @@
-|Name|Endorsements|Immediately freeze all school closings?|Should chicago voters elect their entire school board?|Open a level 1 adult trauma center on the south side?|Continue chicago’s red traffic light program?|Increasing police presence in neighborhoods?|Photo|
-|---|---|---|---|---|---|---|---|
-|Bob Fioretti|Chicago Police Sergeants Association, Green Party of Chicago, Southside Democracy for America|Yes|Yes|Yes|No|Yes|![](/images/mayors/fioretti.jpg)|
-|Jesus “Chuy” Garcia|The Chicago Teachers Union and President Karen Lewis, Service Employees International Union Healthcare Illinois, United Working Families|Yes|Yes|Yes|No|Yes|![](/images/mayors/garcia.jpg)|
-|Rahm Emanuel|President Barack Obama, Chicago Firefighters Union, Chicago Sierra Club|No|No|No|Yes|Yes|![](/images/mayors/emanuel.jpg)|
-|William Dock Walls|Illinois Herald|N/A|Yes|Yes|No|N/A|![](/images/mayors/walls.jpg)|
-|Willie Wilson|Rep. Danny K. Davis, Rev. Stephen Thurston, Dr. Marshall Hatch|Yes|Yes|Yes|No|No|![](/images/mayors/wilson.jpg)|
+|Name|Bio|Description|Website|Facebook|Photo|
+|---|---|---|---|---|---|
+|Paul Fiorino|Former Director of Ballet Arts Center, former State Business Chairman of National Republican Committee, three time candidate for Governor|Vocal advocate for ballet and dance, wants to make Denver the creative capital of the Rocky Mountain region, doesn’t solicit campaign contributions or maintain a website.|||![](/images/mayors/Fiorino.jpg)|
+|Marcus Giavanni|Nightclub owner, believes Denver’s lucky numbers are 7 & 13, write-in candidate for Governor in 2014|Frequent candidate for mayor and governor, strong dislike for establishment politicians. Touts “Social Global Optimization Platform,” his plan to bring jobs to Denver.|http://marcusgiavanni.com|https://www.facebook.com/marcus.giavanni|![](/images/mayors/Giavanni.jpg)|
+|Michael Hancock|Current Mayor of Denver, served on City Council for 8 years prior to becoming Mayor, including 2 terms as City Council President|Pushes for extensive publicprivate development projects to make Denver a global destination, supports body camera laws for police, wants to expand public transit in Denver and the metro region.|http://hancockfordenver.com|https://www.facebook.com/hancockfordenver|![](/images/mayors/Hancock.jpg)|
+|"Chairman" Seku|Former President of Metro State University student body, CEO/ Chairman of Board of Da Black Starz International Actionz MoveMent-4-SelF-DeFenZe,LLc|Wants to “arm the locals” to convince criminals (which he considers “politicians, business folk, and police”) to not commit crimes; supports de-centralizing schools.|http://www.democracy.com/SEKU|https://www.facebook.com/ChairmanSeku|![](/images/mayors/Seku.jpg)|
