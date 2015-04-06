@@ -21,11 +21,11 @@
           <h1>How Do I Vote?</h1>
           <p>You can register to vote any time up to and including Election Day, and you can vote in person, by mail, or by dropping your mail ballot off. If you’re already registered to vote at your current address, you’ll automatically get a ballot in the mail. Read on to learn more.</p>
           <h3>You Can Still Register To Vote, Even On Election Day <%= @election_day %></h3>
-          <p>You can register to vote (or update your address) at any time up to including Election Day at any Voter Service Center in Denver County, or at the Denver County Clerk’s office (<a href="https://www.google.com/maps/place/W+14th+Ave+%26+Bannock+St+%26+W+14th+Ave+Pkwy,+Denver,+CO+80202/@39.738449,-104.9902579,17z/data=!3m1!4b1!4m2!3m1!1s0x876c78d4b9c69055:0x33d3df511af5c500" target="_blank">200 W. 14th Ave, 14th Bannock</a>). If you register to vote (or update your address) online before April 27th, you’ll get a mail ballot sent to you. After April 27th, you have to go in person to register to vote or change your address. Visit justvotecolorado.org for more information.</p>
+          <p>You can register to vote (or update your address) at any time up to including Election Day at any Voter Service Center in Denver County, or at the Denver County Clerk’s office (<a href="https://www.google.com/maps/place/W+14th+Ave+%26+Bannock+St+%26+W+14th+Ave+Pkwy,+Denver,+CO+80202/@39.738449,-104.9902579,17z/data=!3m1!4b1!4m2!3m1!1s0x876c78d4b9c69055:0x33d3df511af5c500" target="_blank">200 W. 14th Ave, 14th Bannock</a>). If you register to vote (or update your address) online before April 27th, you’ll get a mail ballot sent to you. After April 27th, you have to go in person to register to vote or change your address. Visit <a href="http://justvotecolorado.org" target="_blank">justvotecolorado.org</a> for more information.</p>
           <h3>Voting By Mail Or Dropping Off Your Mail-in Ballot</h3>
           <p>If you’re registered at your current address, you’ll get a ballot in the mail that you can mail back in or drop off at any 24-hour dropbox in the city or at any Voter Service Polling Center. Or you could go vote in person if that’s what you’d prefer (even if you got a mail ballot sent to you). Your ballot must be *received* by the County Clerk by 7PM on Election Day - postmarks do NOT count.</p>
           <h3>Voting in Person</h3>
-          <p>If you’re not registered to vote, or not registered at your current address, or you just like voting in person, you can still go register and/ or vote in person at any time up to & including Election Day. In-person voting starts on Monday, April 20th at 200 W 14th Ave (<a href="https://www.google.com/maps/place/W+14th+Ave+%26+Bannock+St+%26+W+14th+Ave+Pkwy,+Denver,+CO+80202/@39.738449,-104.9902579,17z/data=!3m1!4b1!4m2!3m1!1s0x876c78d4b9c69055:0x33d3df511af5c500" target="_blank">14th & Bannock</a>), and locations open up across the city on Monday, April 27th. In-person voting ends at 7pm on Tuesday, May 5th. Visit <a href="http://justvotecolorado.org" target="_blank">justvotecolorado.org</a> for a full list of locations.</p>
+          <p>If you’re not registered to vote, or not registered at your current address, or you just like voting in person, you can still go register and/ or vote in person at any time up to & including Election Day. In-person voting starts on Monday, April 20th at the Denver County Clerk’s office (<a href="https://www.google.com/maps/place/W+14th+Ave+%26+Bannock+St+%26+W+14th+Ave+Pkwy,+Denver,+CO+80202/@39.738449,-104.9902579,17z/data=!3m1!4b1!4m2!3m1!1s0x876c78d4b9c69055:0x33d3df511af5c500" target="_blank">200 W. 14th Ave, 14th Bannock</a>), and locations open up across the city on Monday, April 27th. In-person voting ends at 7pm on Tuesday, May 5th. Visit <a href="http://justvotecolorado.org" target="_blank">justvotecolorado.org</a> for a full list of locations.</p>
           <h3>Identification, Be Sure To Sign Your Ballot</h3>
           <p>Pay close attention, because your mail ballot might request that you include a photocopy (or a printed photo) of your ID with your ballot. The following are acceptable forms of ID (for mail or in-person voting): CO Driver’s License, CO Student ID, Passport, Military ID, or Utility Bill. For a full list of acceptable forms of ID, go to <a href="http://justvotecolorado.org" target="_blank">justvotecolorado.org</a>. And don’t forget to sign your ballot!</p>
           <h3>Brought to you by</h3>
@@ -90,7 +90,7 @@
               <% if counselor['facebook'] %>
                 <a target="_blank" class="fa fa-link" href="<%= counselor['facebook'] %>">Website</a>
               <% end %>
-              <a class="vote_for" data-name="<%= counselor["name"] %>" data-link="/sharing/counselor/<%= district['district'] %>/<%= counselor['name'] %>" data-office="Denver City Council" onclick="endorsementWidget(this)">endorse</a>
+              <a class="vote_for" data-name="<%= counselor["name"] %>" data-link="/sharing/counselor/<%= district['district'] %>-<%= counselor['name'].downcase.gsub(' ','-').gsub(/[^a-zA-Z0-9\-]/,'') %>" data-office="Denver City Council" onclick="endorsementWidget(this)">endorse</a>
             </div>
           <% end %>
           <div class="issues">
@@ -186,7 +186,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-59932015-1', 'auto');
+    ga('create', 'UA-59932015-2', 'auto');
     ga('send', 'pageview');
 
   </script>
