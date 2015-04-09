@@ -17,8 +17,8 @@
             if (turf.inside(point, the_district)) {
                 var center = turf.centroid(the_district).geometry.coordinates
                 mapIt(the_district, center, [lng, lat]);
-                renderCounselors(i);
-                return districts[i];
+                renderCounselors(the_district.properties.DIST_NUM.toString());
+                return the_district;
             }
         }
         new_map([lng, lat]);

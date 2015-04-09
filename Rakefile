@@ -81,7 +81,7 @@ task :erb, :paths do |t,args|
     end
 end
 
-task :all do
+task :all => [:mayors, :other, :counselors] do
     """
     Rebuild all the HTML pages.
     """

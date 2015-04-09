@@ -1,3 +1,9 @@
+@import 'settings';
+@import 'variables';
+@import 'reset';
+@import 'reset';
+@import 'type';
+
 // Mixins
 @mixin clear() {
     &:after, &:before {
@@ -80,14 +86,15 @@ body {
     padding: 30px 0;
     @include clear();
     .scroll {
+        overflow-y: scroll;
         margin: 20px 0 50px;
-        @include gridle_state(tablet) {  overflow-y: scroll; }
         table {
             th .img {
                 @include frame(40px);
                 margin: 0 auto;
                 display: block;
             }
+            th h4 { font-size: 10px; }
             tr:nth-child(even) td { background: lighten($background, 30%); }
             td:first-child {
                 text-align: left;
@@ -113,10 +120,10 @@ body {
     }
 }
 .candidate {
-    @include gridle(10, tablet);
     @include gridle(6);
+    @include gridle(10, tablet);
     @include gridle_centered(tablet);
-    min-height: 440px;
+    min-height: 470px;
     margin-bottom: 50px;
 
     .social {
@@ -136,69 +143,15 @@ body {
         }
     }
     .bio {
-        padding-left: 0; padding-right: 0;
-    }
-    .bio {
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 170px;
         @include gridle(12, mobile);
         @include gridle(6);
     }
     .img {
         @include frame(100px);
         margin: 0 auto;
-    }
-}
-.measure {
-    @include gridle(12);
-
-    .choice { margin: 30px 0; @include gridle(12); }
-    .thumb {
-        @include gridle(1);
-        @include gridle_centered(mobile);
-        @include gridle_state(mobile) { padding-bottom: 20px; }
-    }
-    .explanation {
-        @include gridle(6);
-        @include gridle(11, tablet);
-        @include gridle(12, mobile);
-        @include gridle_push(1, tablet);
-        @include gridle_push(0, mobile);
-    }
-    .endorsements {
-        @include gridle(5);
-        @include gridle(10, tablet);
-        @include gridle_push(2, tablet);
-        @include gridle_push(0, mobile);
-        @include gridle(12, mobile);
-        @include gridle_state(mobile) { margin-bottom: 40px; }
-    }
-    h4 { color: $second-emphasis; }
-    h2, h4, h5 { span { text-transform: uppercase; }}
-    span.fa {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        margin: 10px 0 0 -30px;
-        &.no { background: $color-no; }
-        &.yes { background: $color-yes; }
-        text-align: center;
-        font-size: 30px;
-        color: white;
-        &:before { line-height: 50px; }
-    }
-    .recommendation {
-        text-align: left;
-        span.fa { margin: 0; }
-        span.yay-or-nay {
-            &.no { color: $color-no; }
-            &.yes { color: $color-yes; }
-        }
-        @include gridle_state(mobile) {
-            text-align: center;
-            span {
-                display: block;
-                margin: 30px auto !important;
-            }
-        }
     }
 }
 #search_form {
@@ -240,8 +193,16 @@ body {
         padding: 0 4px;
         &:before { margin-right: 2px; }
     }
+    .bio {
+        margin: 20px 0;
+    }
+    min-height: 300px;
+    &.row-1 { @include gridle_push(4); }
+    &.row-2 {
+        @include gridle_push(2);
+        @include gridle_push(0, tablet);
+    }
 }
-#other .candidate { min-height: 120px; }
 .map_container {
     margin: 50px 0 0;
 
