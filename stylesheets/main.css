@@ -1680,7 +1680,6 @@ body {
 
 a.vote_for {
   position: absolute;
-  bottom: -10px;
   left: 50%;
   width: 84px;
   margin-left: -42px;
