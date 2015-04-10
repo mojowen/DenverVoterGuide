@@ -236,6 +236,9 @@ a, a:visited {
 em {
   font-style: italic; }
 
+strong {
+  font-weight: bold; }
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0 auto;

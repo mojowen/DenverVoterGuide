@@ -269,6 +269,9 @@ a, a:visited {
 em {
   font-style: italic; }
 
+strong {
+  font-weight: bold; }
+
 @media screen and (max-width: 400px) {
   @-ms-viewport {
     width: device-width; } }
