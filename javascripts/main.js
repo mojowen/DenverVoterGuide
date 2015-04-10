@@ -245,7 +245,7 @@
     }
 
     document.body.onload = function() {
-        search_form.onsubmit = searchSubmit;
+        search_form.onsubmit = function() { searchSubmit.apply(this); return false; }
 
         tinyGET('/data/district_shapes.json',{},
             function(data) { districts = data; when_ready(); });
