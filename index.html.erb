@@ -22,17 +22,17 @@
         <div class="about">
           <p>This independent voter guide is designed to give you the quickest, most important information on your ballot and why it’s important to vote.</p>
 
-          <p>In Denver’s May 5th, 2015 city election, we will vote for a Mayor, a City Councilperson to represent their district, two At-Large representatives to City Council who’ll represent the whole city, plus the Clerk &amp; Recorder (who runs elections &amp; issues marriage licenses) and the Auditor (ensures that the city government operates efficiently &amp; with integrity).</p>
+          <p>In Denver’s May 5th, 2015 city election, Denverites will vote for a Mayor, a City Councilperson to represent their district, two At-Large representatives to City Council who’ll represent the whole city, plus the Clerk &amp; Recorder (who runs elections &amp; issues marriage licenses) and the Auditor (ensures that the city government operates efficiently &amp; with integrity).</p>
 
-          <p>Use the “find your district” look-up tool to pull up the candidates who are running for your area in Denver! And click here if you need more information on how to cast your ballot, or if you want the scoop on what City Council does.</p>
+          <p><strong>Use the “find your district” look-up tool to pull up the candidates who are running for your area in Denver! And click here if you need more information on how to cast your ballot, or if you want the scoop on what City Council does.</strong></p>
+
           <form id="search_form" class="grid-8 centered">
               <input placeholder="Enter Your Address" type="text" name="address">
               <button type="submit">Find Your District</button>
           </form>
-
+          <p>Click "Find Your District", and then scroll down to see the candidates in your district</p>
           <h3>About What’s Inside</h3>
-          <p>This voter guide compares candidates’ stances on some of the most pressing issues facing Denver, especially those facing young people. We asked the candidates if they’d raise Denver’s minimum wage to $15, if they would support increasing protections for renters in Denver (we have some of the worst renters’ rights in the country), if they would support increased accountability for Denver police, and if they’d support putting a carbon tax on our utility bills to fund investments in energy efficiency, renewable energy and green jobs to fight climate change. The candidates answered yes/no questions on a survey of ours, and we supplemented that info with their explanation of “Why or why not?” when appropriate.</p>
-          <h4>CALL THE VOTER HOTLINE WITH ANY PROBLEMS OR QUESTIONS: 1-866-OUR-VOTE</h4>
+          <p>This voter guide compares candidates’ stances on some of the most pressing issues facing Denver, especially those facing young people. We asked the candidates if they’d raise Denver’s minimum wage to $15 (if they had the authority to), if they would support increasing protections for renters in Denver (we have some of the worst renters’ rights in the country), if they would support increased accountability for Denver police, and if they’d support putting a carbon tax on our utility bills to fund investments in energy efficiency, renewable energy and green jobs to fight climate change. The candidates answered yes/no questions on a survey of ours, and we supplemented that info with their explanation of “Why or why not?” when appropriate.</p>
           <br />
 
           <h3>Brought to you by</h3>
@@ -55,12 +55,16 @@
           <div class="bio">
             <div class="img" style="background-image: url('<%= mayor["photo"] %>');" ></div>
             <div class="social">
-              <a target="_blank" class="fa fa-link" href="<%= mayor['website'] %>">
-                Website
-              </a>
-              <a target="_blank" class="fa fa-facebook-square" href="<%= mayor['facebook'] %>">
-              Facebook
-              </a>
+              <% if mayor['website'] %>
+                <a target="_blank" class="fa fa-link" href="<%= mayor['website'] %>">
+                  Website
+                </a>
+              <% end %>
+              <% if mayor['facebook'] %>
+                <a target="_blank" class="fa fa-facebook-square" href="<%= mayor['facebook'] %>">
+                Facebook
+                </a>
+              <% end %>
             </div>
           </div>
           <p><em><%= mayor['bio'] %></em></p>
@@ -198,5 +202,22 @@
 
   </script>
   <div id="popup_config" data-url="http://www.denvervoterguide.org/form.html" data-key="1MyYumXw-2x1QSho1RMYLrfYJAWaA8kv3b9idjHDTmKc" data-phone_name="entry.1180421525" data-zip_name="entry.229449272"></div><script src="http://www.denvervoterguide.org/javascripts/popup.js"></script>
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+      var fbds = document.createElement('script');
+      fbds.async = true;
+      fbds.src = '//connect.facebook.net/en_US/fbds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(fbds, s);
+      _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1492146151045273']);
+  })();
+  window._fbq = window._fbq || [];
+  window._fbq.push(['track', 'PixelInitialized', {}]);
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1492146151045273&amp;ev=PixelInitialized" /></noscript>
+
 </body>
 </html>

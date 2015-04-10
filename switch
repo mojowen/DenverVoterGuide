@@ -1,0 +1,2 @@
+killall guard
+git checkout $1

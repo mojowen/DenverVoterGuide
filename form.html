@@ -8,16 +8,22 @@
 <body>
     <div class="container">
         <div class="section">
-            <h1>Text Me My Polling Place</h1>
-            <p>Sing up for an automatic reminder of your closet polling place</p>
+            <h1>TEXT ME WHERE TO VOTE</h1>
+            <p>Sign up to get voting info sent to you:</p>
             <form method="POST" id="the_form">
               <input type="text" id="the_zip_input" placeholder="Your Zip Code">
               <input type="text" id="the_phone_input" placeholder="Your Cell #">
+              <br />
+              <input type="checkbox"> I agree to the <a id="agreement" href="#">terms &amp; conditions</a>
               <input type="hidden" name="submit" value="Submit">
               <br/ >
               <input type="submit" value="Sign Up">
             </form>
             <h2>Dont Forget to<br/>Vote by May 5th</h2>
+            <div id="terms" style="display:none">
+                <h4>Terms and Conditions</h4>
+                <p>I want information about how to vote, so by checking this box I agree to the lawyer-speak: I understand &amp; agree that by providing my cell number, I consent to having New Era &amp; its volunteers &amp; affiliates remind me to vote &amp; keep me updated about important issues, sometimes using text or prerecorded messages, or a lil autodialer robot that does the dialing for you so that your fingers don’t cramp.</p>
+            </div>
         </div>
     </div>
 <script >
@@ -37,7 +43,13 @@
             window.parent.postMessage('done', config['post_back'])
             try { ga('send', 'event', 'popup', 'submit', config['action']); } catch(e) { }
         }
-        try { ga('send', 'event', 'popup', 'load', config['action']); } catch(e) { }
+        try {
+            ga('send', 'event', 'popup', 'load', config['action']);
+        } catch(e) { }
+        agreement.onclick = function() {
+            terms.style.display = 'block'
+            return false;
+        }
     })()
 </script>
 <script>
@@ -49,5 +61,21 @@
     ga('create', 'UA-59932015-2', 'auto');
     ga('send', 'pageview');
 </script>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '1492146151045273']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1492146151045273&amp;ev=PixelInitialized" /></noscript>
 </body>
 </html>
