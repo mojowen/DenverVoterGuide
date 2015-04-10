@@ -60,7 +60,7 @@
     // bindings
     function close_popup(success) {
         success = success || false
-        d.body.removeChild(container);
+        container.style.display = 'None';
         try { ga('send', 'event', 'popup',
                  success ? 'close_success' : 'close_fail', key);
         } catch(e) { }
@@ -74,7 +74,10 @@
 
     try {
         window.addEventListener("message", function(e) {
-            setTimeout( function() { close_popup(true); }, 500)
+            if( e.data == 'terms') {
+                inner.style.maxHeight = 'inherit'
+                inner.style.height = '640px'
+            } else { close_popup(true)}
         })
     } catch(e) {}
 

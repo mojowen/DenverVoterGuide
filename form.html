@@ -14,9 +14,8 @@
               <input type="text" id="the_zip_input" placeholder="Your Zip Code">
               <input type="text" id="the_phone_input" placeholder="Your Cell #">
               <br />
-              <input type="checkbox"> I agree to the <a id="agreement" href="#">terms &amp; conditions</a>
-              <input type="hidden" name="submit" value="Submit">
-              <br/ >
+              <label id="agree_row"><input type="checkbox" id="agree"> I agree to the <a id="agreement" href="#">terms &amp; conditions</a></label>
+              <input type="hidden" name="submit" value="Submit"><br />
               <input type="submit" value="Sign Up">
             </form>
             <h2>Dont Forget to<br/>Vote by May 5th</h2>
@@ -40,13 +39,20 @@
         the_phone_input.setAttribute('name', config['phone_name'])
         the_zip_input.setAttribute('name', config['zip_name'])
         the_form.onsubmit = function() {
+            if( ! agree.checked ) {
+                agree_row.className = 'error'
+                return false;
+            }
             window.parent.postMessage('done', config['post_back'])
-            try { ga('send', 'event', 'popup', 'submit', config['action']); } catch(e) { }
+            try {
+                ga('send', 'event', 'popup', 'submit', config['action']);
+            } catch(e) { }
         }
         try {
             ga('send', 'event', 'popup', 'load', config['action']);
         } catch(e) { }
         agreement.onclick = function() {
+            window.parent.postMessage('terms', config['post_back'])
             terms.style.display = 'block'
             return false;
         }
