@@ -262,10 +262,3 @@ body {
     color: #d81b59; }
   .container form {
     margin: 20px 0; }
-
-#agree_row {
-  margin: 0;
-  padding: 0; }
-  #agree_row.error:before {
-    color: #d81b59;
-    content: 'You gotta check this \2192'; }

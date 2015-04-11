@@ -14,7 +14,7 @@
               <input type="text" id="the_zip_input" placeholder="Your Zip Code">
               <input type="text" id="the_phone_input" placeholder="Your Cell #">
               <br />
-              <label id="agree_row"><input type="checkbox" id="agree"> I agree to the <a id="agreement" href="#">terms &amp; conditions</a></label>
+              <label><input value="opted-in" type="checkbox" id="the_optin_input"> I agree to the <a id="agreement" href="#">terms &amp; conditions</a></label>
               <input type="hidden" name="submit" value="Submit"><br />
               <input type="submit" value="Sign Up">
             </form>
@@ -27,8 +27,14 @@
     </div>
 <script >
     (function() {
-        var config = {'action': null,'post_back': null,'phone_name': null,'zip_name': null},
+        var config = {
+                'action': null,
+                'post_back': null,
+                'phone_name': null,
+                'zip_name': null,
+                'optin_name': null},
             params = document.location.search.replace('?','').split('&')
+
         for (var i = params.length - 1; i >= 0; i--) {
             key_val = params[i].split('=')
             if( typeof config[key_val[0]] !== 'undefined' ) config[key_val[0]] = key_val[1]
@@ -38,11 +44,8 @@
             'https://docs.google.com/forms/d/'+config['action']+'/formResponse')
         the_phone_input.setAttribute('name', config['phone_name'])
         the_zip_input.setAttribute('name', config['zip_name'])
+        the_optin_input.setAttribute('name', config['optin_name'])
         the_form.onsubmit = function() {
-            if( ! agree.checked ) {
-                agree_row.className = 'error'
-                return false;
-            }
             window.parent.postMessage('done', config['post_back'])
             try {
                 ga('send', 'event', 'popup', 'submit', config['action']);

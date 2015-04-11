@@ -6,6 +6,7 @@
         key = config_elem.getAttribute('data-key'),
         phone_name = config_elem.getAttribute('data-phone_name'),
         zip_name = config_elem.getAttribute('data-zip_name'),
+        optin_name = config_elem.getAttribute('data-optin_name'),
         // Elements
         container = d.createElement('div'),
         mask = d.createElement('div'),

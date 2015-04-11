@@ -27,13 +27,3 @@ body {
     line-height: 2em;
     form { margin: 20px 0; }
 }
-#agree_row {
-  margin: 0;
-  padding: 0;
-  &.error {
-    &:before {
-      color: $emphasis;
-      content: 'You gotta check this \2192';
-    }
-  }
-}
