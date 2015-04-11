@@ -17,7 +17,8 @@
         params = ['action='+key,
                   'post_back='+post_back,
                   'phone_name='+phone_name,
-                  'zip_name='+zip_name].join('&')
+                  'zip_name='+zip_name,
+                  'optin_name='+optin_name].join('&')
 
     // style
     mask.style.position = 'fixed'
