@@ -1,5 +1,9 @@
 (function() {
+    var current_onload = window.onload || function() { }
+
     window.onload = function() {
+        current_onload();
+
         var d = document,
             // Config
             config_elem = d.getElementById('popup_config'),

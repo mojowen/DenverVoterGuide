@@ -244,7 +244,10 @@
        return n+(s[(v-20)%10]||s[v]||s[0]);
     }
 
-    document.body.onload = function() {
+    var current_onload = window.onload || function() {}
+    window.onload = function() {
+        current_onload()
+
         search_form.onsubmit = function() { searchSubmit.apply(this); return false; }
 
         tinyGET('/data/district_shapes.json',{},
