@@ -43,7 +43,9 @@ class Controller
             "title" => meta_data['title'] || default_title,
             "description" => meta_data['description'] || default_description,
             "image" => ("#{meta_data['image'] || default_image}"),
-            "url" => ("#{meta_data['url'] || 'http://www.denvervoterguide.org'}")
+            "url" => (meta_data['url'] || 'http://www.denvervoterguide.org'),
+            "twitter_name" => 'neweracoaction',
+            "twitter_hashtag" => 'denvervotes',
         }
         render('_meta.erb')
     end

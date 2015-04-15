@@ -135,8 +135,8 @@
             "https://www.facebook.com/sharer/sharer.php?u="+facebook_link)
         var tweet_params = ["text="+message,
                         "url="+escape(link+'&utm_medium=twitter'),
-                        "hashtags=denvervotes",
-                        "related=neweracoaction"].join('&')
+                        "hashtags="+hashtag,
+                        "related="+related].join('&')
         twitter.setAttribute('href',
             "https://twitter.com/intent/tweet?"+tweet_params)
 
