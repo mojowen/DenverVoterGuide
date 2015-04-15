@@ -18,12 +18,12 @@
             frame = d.createElement('iframe'),
             closer = d.createElement('a'),
             // iFrame info
-            post_back = document.location.toString(),
+            post_back = document.location.toString().split('#')[0],
             params = ['action='+key,
-                      'post_back='+post_back,
                       'phone_name='+phone_name,
                       'zip_name='+zip_name,
-                      'optin_name='+optin_name].join('&')
+                      'optin_name='+optin_name,
+                      'post_back='+post_back].join('&')
 
         // style
         mask.style.position = 'fixed'
