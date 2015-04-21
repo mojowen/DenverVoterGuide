@@ -110,7 +110,7 @@ class Controller
             'url' => "#{base}/sharing/#{@filename}",
             'image' => "#{base}/#{candidate['photo'].gsub(' ','%20')}",
             'title' => "Vote #{name} for #{office}",
-            'description' => "Vote #{name} for #{office} - and you should too",
+            'description' => "Vote #{name} for #{office}",
         })
     end
 
